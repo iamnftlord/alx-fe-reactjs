@@ -11,7 +11,7 @@ import Counter from './components/counter'
 import ProfilePage from './components/ProfilePage'
 import UserInfo from './components/userInfo'
 import UserDetails from './components/UserDetails'
-import UserContext from './components/UserContext'
+import UserContext from '/components/UserContext'
 
 
 
