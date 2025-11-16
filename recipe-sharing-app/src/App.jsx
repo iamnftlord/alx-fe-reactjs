@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
-import useRecipeStore from './stores/recipeStore';
+import useRecipeStore from './components/recipeStore';
 
 function App() {
   const setRecipes = useRecipeStore((s) => s.setRecipes);
