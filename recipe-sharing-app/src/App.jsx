@@ -8,6 +8,9 @@ import RecipeDetails from './components/RecipeDetails';
 import EditRecipeForm from './components/EditRecipeForm';
 import SearchBar from './components/SearchBar';
 import useRecipeStore from './components/recipeStore';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
+import FavoriteButton from './components/FavoriteButton';
 
 function App() {
   const setRecipes = useRecipeStore((s) => s.setRecipes);
@@ -38,6 +41,16 @@ function App() {
                 <SearchBar />
                 <RecipeList />
               </section>
+
+              <section style={{ marginTop: 20 }}>
+                <FavoritesList />
+              </section>
+
+              <section style={{ marginTop: 20 }}>
+                <RecommendationsList />
+              </section>
+
+              
             </>
           } />
 
@@ -46,6 +59,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    
   );
 }
 
