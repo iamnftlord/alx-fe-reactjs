@@ -1,16 +1,18 @@
 // src/App.jsx
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
 import EditRecipeForm from './components/EditRecipeForm';
+import SearchBar from './components/SearchBar';
 import useRecipeStore from './components/recipeStore';
 
 function App() {
   const setRecipes = useRecipeStore((s) => s.setRecipes);
 
-  // optional demo initial recipes
+  // optional initial sample data
   useEffect(() => {
     setRecipes([
       { id: 1, title: 'Spicy Tomato Pasta', description: 'Tomato, garlic, chili flakes, olive oil', createdAt: new Date().toISOString() },
@@ -32,7 +34,8 @@ function App() {
               </section>
 
               <section style={{ marginTop: 20 }}>
-                <h2>Recipes</h2>
+                <h2>Search Recipes</h2>
+                <SearchBar />
                 <RecipeList />
               </section>
             </>
