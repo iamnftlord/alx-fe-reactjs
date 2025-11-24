@@ -1,7 +1,7 @@
 // src/pages/UserDetails.jsx
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getUser, getUserRepos } from "../services/githubApi";
+import { getUser, getUserRepos } from "../services/githubService";
 
 export default function UserDetails() {
   const { username } = useParams();

@@ -1,8 +1,8 @@
 // src/pages/Home.jsx
 import { useState } from "react";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/Search";
 import UserList from "../components/UserList";
-import { searchUsers } from "../services/githubApi";
+import { searchUsers } from "../services/githubService";
 
 export default function Home() {
   const [query, setQuery] = useState("");
