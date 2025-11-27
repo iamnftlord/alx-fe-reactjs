@@ -13,8 +13,8 @@ export default function Navbar() {
             href="https://github.com"
             target="_blank"
             rel="noreferrer"
-            className="hover:underline"
-          >
+            class="font-medium text-[#646cff] hover:text-[#535bf2] no-underline">
+
             GitHub
           </a>
         </div>
