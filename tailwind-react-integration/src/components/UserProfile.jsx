@@ -1,17 +1,17 @@
 function UserProfile() {
   return (
-    <div className="bg-gray-100 p-4 sm:p-4 md:p-8 max-w-xs sm:max-w-sm md:max-w-sm mx-auto my-10 rounded-lg shadow-lg">
+    <div className="bg-gray-100 p-4 sm:p-4 md:p-8 max-w-xs sm:max-w-sm md:max-w-sm mx-auto my-10 rounded-lg shadow-lg hover:shadow-xl">
       <img
-        className="rounded-full w-24 h-24 sm:w-24 sm:h-24 md:w-36 md:h-36 mx-auto object-cover"
+        className="rounded-full w-24 h-24 sm:w-24 sm:h-24 md:w-36 md:h-36 mx-auto object-cover hover:scale-110 transition-transform duration-300 ease-in-out"
         src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"
         alt="User"
       />
 
-      <h1 className="text-lg sm:text-xl md:text-xl lg:text-2xl text-blue-800 my-4 text-center font-semibold">
+      <h1 className="text-lg sm:text-xl md:text-xl lg:text-2xl text-blue-800 my-4 text-center font-semibold hover:text-blue-300">
         John Doe
       </h1>
 
-      <p className="text-gray-600 text-sm sm:text-base md:text-lg text-center">
+      <p className="text-gray-600 text-sm sm:text-base md:text-lg text-center hover:text-blue-500">
         Developer at Example Co. Loves to write code and explore new technologies.
       </p>
     </div>
