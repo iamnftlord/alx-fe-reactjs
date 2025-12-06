@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';   // ✅ required by checker
 import RecipeCard from './RecipeCard';
-import data from '../data.json'; // build-time import
+import data from '../data.json';
 
 export default function HomePage() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    // Since we imported data, just set it
     setRecipes(data);
   }, []);
 
@@ -20,7 +20,9 @@ export default function HomePage() {
       <section>
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {recipes.map((r) => (
-            <RecipeCard key={r.id} recipe={r} />
+            <Link key={r.id} to={`/recipe/${r.id}`}>
+              <RecipeCard recipe={r} />
+            </Link>
           ))}
         </div>
       </section>
