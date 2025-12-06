@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard';
-import data from '../data.json';
+import data from '../data.json'; // build-time import
 
 export default function HomePage() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
+    // Since we imported data, just set it
     setRecipes(data);
   }, []);
 
@@ -19,12 +20,7 @@ export default function HomePage() {
       <section>
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {recipes.map((r) => (
-            <div
-              key={r.id}
-              className="rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-200"
-            >
-              <RecipeCard recipe={r} />
-            </div>
+            <RecipeCard key={r.id} recipe={r} />
           ))}
         </div>
       </section>
