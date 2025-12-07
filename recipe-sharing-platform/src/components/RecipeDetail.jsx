@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import data from '../data.json';
 
+
+
 export default function RecipeDetail() {
   const { id } = useParams();
   const recipe = data.find(r => String(r.id) === String(id));
