@@ -1,3 +1,5 @@
+// src/components/PostsComponent.jsx
+
 import { useQuery } from "@tanstack/react-query";
 
 const fetchPosts = async () => {
@@ -19,8 +21,17 @@ export default function PostsComponent() {
     isError,
     error,
     refetch,
-  } = useQuery("posts", fetchPosts, {
-    staleTime: 1000 * 60, // 1 minute cache
+  } = useQuery({ // Using the object syntax for useQuery options
+    queryKey: ["posts"],
+    queryFn: fetchPosts,
+    // --- FIX START: Add the required options ---
+    staleTime: 1000 * 60,            // 1 minute (You already had this - determines when data is "fresh")
+    cacheTime: 1000 * 60 * 5,        // 5 minutes (How long inactive/unused data stays in cache)
+    refetchOnWindowFocus: false,     // Disable automatic refetching when window regains focus
+    // Not directly related to caching, but often used for loading states:
+    // This tells React Query to hold onto the previous successful data while new data is fetching
+    keepPreviousData: false,         
+    // --- FIX END ---
   });
 
   if (isLoading) {
