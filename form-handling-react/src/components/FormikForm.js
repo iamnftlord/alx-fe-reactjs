@@ -12,14 +12,11 @@ export default function FormikForm() {
 
   return (
     <Formik
-      initialValues={{
-        username: "",
-        email: "",
-        password: "",
-      }}
+      initialValues={{ username: "", email: "", password: "" }}
       validationSchema={validationSchema}
-      onSubmit={(values) => {
+      onSubmit={(values, { resetForm }) => {
         console.log("Formik submission:", values);
+        resetForm();
       }}
     >
       <Form>
