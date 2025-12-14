@@ -5,6 +5,7 @@ function App() {
   return (
     <div>
       <RegistrationForm />
+      <hr />
       <FormikForm />
     </div>
   );
