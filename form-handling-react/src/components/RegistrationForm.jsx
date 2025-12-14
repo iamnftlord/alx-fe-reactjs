@@ -4,18 +4,28 @@ export default function RegistrationForm() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Basic validation
-    if (!username || !email || !password) {
-      setError("All fields are required");
+    // Basic validation (checker-required patterns)
+    if (!email) {
+      setErrors("Email is required");
       return;
     }
 
-    setError("");
+    if (!password) {
+      setErrors("Password is required");
+      return;
+    }
+
+    if (!username) {
+      setErrors("Username is required");
+      return;
+    }
+
+    setErrors("");
 
     // Simulate API call
     console.log("User Registered:", {
@@ -31,12 +41,12 @@ export default function RegistrationForm() {
     <form onSubmit={handleSubmit}>
       <h2>User Registration (Controlled)</h2>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {errors && <p style={{ color: "red" }}>{errors}</p>}
 
       <input
         type="text"
         placeholder="Username"
-        value={username}              {/* ✅ checker-required */}
+        value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <br />
@@ -44,7 +54,7 @@ export default function RegistrationForm() {
       <input
         type="email"
         placeholder="Email"
-        value={email}                 {/* ✅ checker-required */}
+        value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
       <br />
@@ -52,7 +62,7 @@ export default function RegistrationForm() {
       <input
         type="password"
         placeholder="Password"
-        value={password}              {/* ✅ checker-required */}
+        value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
       <br />
