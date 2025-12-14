@@ -35,15 +35,20 @@ export default function RegistrationForm() {
     });
 
     alert("Registration successful!");
+
+        // ✅ RESET FORM (important)
+    setUsername("");
+    setEmail("");
+    setPassword("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}  >
       <h2>User Registration (Controlled)</h2>
 
       {errors && <p style={{ color: "red" }}>{errors}</p>}
 
-      <input
+      <input class="border border-indigo-100"
         type="text"
         placeholder="Username"
         value={username}
@@ -51,7 +56,7 @@ export default function RegistrationForm() {
       />
       <br />
 
-      <input
+      <input class="border border-indigo-100"
         type="email"
         placeholder="Email"
         value={email}
@@ -59,7 +64,7 @@ export default function RegistrationForm() {
       />
       <br />
 
-      <input
+      <input class="border border-indigo-100"
         type="password"
         placeholder="Password"
         value={password}
@@ -67,7 +72,7 @@ export default function RegistrationForm() {
       />
       <br />
 
-      <button type="submit">Register</button>
+      <button class="bg-blue-500 hover:bg-red-500 text-white px-4 py-2 " type="submit">Register</button>
     </form>
   );
 }
