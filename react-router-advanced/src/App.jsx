@@ -1,14 +1,16 @@
 import {BrowserRouter, Routes, Route, Link,} from "react-router-dom";
-// import Profile from "./components/Profile";
-// import ProfileDetails from "./components/ProfileDetails";
-// import ProfileSettings from "./components/ProfileSettings";
+import Profile from "./components/Profile";
+import ProfileDetails from "./components/ProfileDetails";
+import ProfileSettings from "./components/ProfileSettings";
+
+
 
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Profile from "./pages/Profile";
-import ProfileDetails from "./pages/ProfileDetails";
-import ProfileSettings from "./pages/ProfileSettings";
+// import Profile from "./pages/Profile";
+// import ProfileDetails from "./pages/ProfileDetails";
+// import ProfileSettings from "./pages/ProfileSettings";
 import BlogPost from "./pages/BlogPost";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -24,6 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile/*" element={<Profile />} />
 
         {/* Protected + Nested Routes */}
         <Route
